@@ -9,6 +9,8 @@ google :: String -> [String] --google the error
 --wget www.google.com
 --wget -r www.google.com
 --https://hackage.haskell.org/package/scalpel
+--https://moz.com/blog/the-ultimate-guide-to-the-google-search-parameters
+--wget http://www.google.com/search?q=query+goes+here
 --go on stack overflow
 --apply fix to inputfile
 --output fixed file
