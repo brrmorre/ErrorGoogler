@@ -47,6 +47,7 @@ fromCommentGuessFunctionName
 fromFunctionNameGuessCode
 fromCodeGuessComment
 
+-- the key to get the drift on more and more track is to keep prompting the user to ask if the code is better than before or worse than before after each iteration
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
