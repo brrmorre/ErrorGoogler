@@ -15,7 +15,7 @@ duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 stackoverflowURLFinder html = (html =~ ("(https://|http://)?([^./]+[.])?stackoverflow[.]com.*" :: String)) :: [[String]]
 grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
 
-main = print ((duckduckgoSearcher "stackoverflow") =~ "[a-z]+" :: String)
+--main = print ((duckduckgoSearcher "stackoverflow") =~ "[a-z]+" :: String)
 
 --search stackoverflow and code base for examples of working code that uses the stuff that is incorrectly used as a result of the error message
 --copy paste example and make it fit into problem area.
