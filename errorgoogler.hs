@@ -26,7 +26,8 @@ duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter se
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 stackoverflowURLFinder html = (html =~ ("(https://|http://)?([^./]+[.])?stackoverflow[.]com.*" :: String)) :: [[String]]
 grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
-searchDuckduckgoForStackoverflowURLs searchString = stackoverflowURLFinder(duckduckgoSearcher(searchString))
+runGHC codePath = createProcess (proc "ghc" [codePath])
+--searchDuckduckgoForStackoverflowURLs searchString = stackoverflowURLFinder(duckduckgoSearcher(searchString))
 
 --main = print ((duckduckgoSearcher "stackoverflow") =~ "[a-z]+" :: String)
 
