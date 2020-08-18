@@ -2,7 +2,7 @@
 -- I could import this maybe https://hackage.haskell.org/package/google-server-api
 -- mike was here
 
-builder -- take a string and google it and then give relevant htmls
+googlescraper -- take a string and google it and then give relevant urls/relevant text from the html
 googledesugarer -- take in a text file(string) and replace google searches with relevant urls from google
 htmlresearcher -- take in a url and research string and output relevant text from the url
 htmldesugarer -- take in a text file(string) and replace urls with htmlresearcher(url)
