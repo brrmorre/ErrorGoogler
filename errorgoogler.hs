@@ -3,15 +3,14 @@
 -- mike was here
 import System.Process
 
-googleScraper :: String -> [String] -- take a string and google it and then give relevant urls/relevant text from the html
-
 wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]) -- should dump the html from the url
 whiteSpaceToPlusConverter string = map (\character -> if character==' ' then '+'; else character) string
 uRLConverter searchString = whiteSpaceToPlusConverter searchString
 duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter searchString -- convert a search string into a duckduckgo search url
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 regexExtractor searchString = (searchString =~ "[a-z]+") :: [String]--extract searchstring from html using regex
-searchURLExtractor html = regexExtractor html--finds URLs *matching some TBD specification* in html
+searchURLExtractor html searchString = regexExtractor html searchString --finds URLs *matching some TBD specification* in html
+
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
 htmlDesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
@@ -20,8 +19,8 @@ compilerError -- take in a string and then run a compiler on that string and giv
 stringNamer -- take in a string and give a name for that string
 nameToHaskellConverter -- take in a name and convert to haskell
 nameCommenter -- take in a name and provide a comment of what it does
-compilerErrorGoogler :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
-google :: String -> [String] --google the error
+compilerErrorGoogler :: String -> String -> String -> String -- InputFile -> ErrorMessage -> SearchEngine -> OutputFile
+google :: String -> [String] -- google the error
 --https://www.quora.com/Is-there-an-API-for-Google-search-results
 --use wget?
 --wget www.google.com
