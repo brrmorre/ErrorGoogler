@@ -3,18 +3,18 @@
 -- mike was here
 import System.Process
 
-googlescraper :: String -> [String] -- take a string and google it and then give relevant urls/relevant text from the html
+googleScraper :: String -> [String] -- take a string and google it and then give relevant urls/relevant text from the html
 
 wget url = createProcess (proc "wget" ["-q", url, "-O", "-"]) -- should dump the html from the url
-duckduckgoconverter searchString = "duckduckgo.com/search?q=" + uRLConverter SearchString-- convert a search string into a duckduckgo search url
+duckduckgoconverter searchString = "duckduckgo.com/search?q=" + uRLConverter searchString-- convert a search string into a duckduckgo search url
 
-googledesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
-htmlresearcher -- take in a url and research string and output relevant text from the url
-htmldesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
-examplefinder -- take in a url and research string and pull an example from the url of using the research string
-compilererror -- take in a string and then run a compiler on that string and give back the error message
-stringnamer -- take in a string and give a name for that string
-compilererrorgoogler :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
+googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
+htmlResearcher -- take in a url and research string and output relevant text from the url
+htmlDesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
+exampleFinder -- take in a url and research string and pull an example from the url of using the research string
+compilerError -- take in a string and then run a compiler on that string and give back the error message
+stringNamer -- take in a string and give a name for that string
+compilerErrorGoogler :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
 google :: String -> [String] --google the error
 --https://www.quora.com/Is-there-an-API-for-Google-search-results
 --use wget?
