@@ -16,6 +16,7 @@ main = do
         putStrLn "Im gonna now attempt to compile this code for you <3"
         (_, Just errorMessage, _, _) <- createProcess (proc "ghc" [file]){ std_out = CreatePipe }
         putStrLn "Oh NOES!!! It errored :( Lets google this error!"
+        duckduckgoSearcher(errorMessage)
     
      
       
