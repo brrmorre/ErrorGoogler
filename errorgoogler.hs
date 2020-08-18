@@ -4,7 +4,8 @@
 import System.Process
 
 googlescraper String -> [String] -- take a string and google it and then give relevant urls/relevant text from the html
---createProcess (proc "wget" ["-q", "www.google.com", "-O", "-"])
+
+wget url = createProcess (proc "wget" ["-q", "url", "-O", "-"])
 
 googledesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlresearcher -- take in a url and research string and output relevant text from the url
