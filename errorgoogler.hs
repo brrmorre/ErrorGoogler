@@ -48,7 +48,7 @@ regexExtractor html = html =~ "*stackoverflow*" --extract searchstring from html
 --         "So... How do you want to implement this comment? I can suggest some names..."
 --         "how would that function work?"
 -- When the error message is "This thing isnt defined, then ask the user if they wanna define it"
-           "What sorts of functions do you need?"
+--           "What sorts of functions do you need?"
 -- then keep running compiler and removing compiler errors until it can compile
 
 --fromCommentGuessFunctionName
