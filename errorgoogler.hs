@@ -10,6 +10,7 @@ duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter se
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 regexExtractor html searchString filterWord = (searchString =~ "[a-z]+") :: [String]--extract searchstring from html using regex
 --https://regex101.com/
+-- ^(https:\/\/|http:\/\/|)stackoverflow\.com.*
 searchURLExtractor html searchString = regexExtractor html searchString --finds URLs *matching some TBD specification* in html
 
 searchDuckduckgoForURLs searchString = searchURLExtractor(duckduckgoSearcher(searchString))
