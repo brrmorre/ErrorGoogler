@@ -16,7 +16,7 @@ searchURLExtractor html searchString = regexExtractor html searchString --finds 
 
 searchDuckduckgoForURLs searchString = searchURLExtractor(duckduckgoSearcher(searchString))
 visitURLs uRLs = map wget uRLs
-searchDuckduckgoAndVisitURLs searchString = visitURLs searchDuckduckgoForURLs searchString
+searchDuckduckgoAndVisitURLs searchString = visitURLs(searchDuckduckgoForURLs searchString)
 -- searchDuckduckgoAndVisitStackoverflow
 -- searchGoogleAndVisitStackoverflow
 -- filter through to get the code snippits and terminal commands, anything formatted in some code block
