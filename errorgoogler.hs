@@ -26,15 +26,15 @@ filterForCodeBlocks -- filter for code blocks
 filterForRun -- search for the word run
 
 guessAtSolution errorMessage = filterForCodeBlocks(getTopRatedAnswer(searchDuckduckgoAndVisitStackoverflow(errorMessage)))
-applySolutionSnippitToSloppyCode sloppyCode solutionSnippit = --TODO
+-- applySolutionSnippitToSloppyCode sloppyCode solutionSnippit = --TODO
 runGHC code = createProcess (proc "ghc" [code])
-runSloppyCodeAndImproveByOneIteration sloppyCode = applySolutionSnippitToSloppyCode sloppyCode (guessAtSolution runGHC(sloppyCode))
+-- runSloppyCodeAndImproveByOneIteration sloppyCode = applySolutionSnippitToSloppyCode sloppyCode (guessAtSolution runGHC(sloppyCode))
 codeCompilesWithoutError code = runGHC(code) == gHCSuccessMessage
 
-fixCode code = if codeCompilesWithoutError code then code else fixCode (runSloppyCodeAndImproveByOneIteration code)
+-- fixCode code = if codeCompilesWithoutError code then code else fixCode (runSloppyCodeAndImproveByOneIteration code)
 
-listenToUser -- listen to the user using SpeechToText (returns what the user said physically)
-writeCode = listenToUser --and then write down users speech as a comment in the code file where the user specifies
+--listenToUser -- listen to the user using SpeechToText (returns what the user said physically)
+--writeCode = listenToUser --and then write down users speech as a comment in the code file where the user specifies
                          --then ask if it looks good If NO then undo last proposed comment
                                                    --If YES then commit proposed comment
 -- the strategy is to slowly convert the english comments from the user into haskell code
@@ -46,9 +46,9 @@ writeCode = listenToUser --and then write down users speech as a comment in the 
            "What sorts of functions do you need?"
 -- then keep running compiler and removing compiler errors until it can compile
 
-fromCommentGuessFunctionName
-fromFunctionNameGuessCode
-fromCodeGuessComment
+--fromCommentGuessFunctionName
+--fromFunctionNameGuessCode
+--fromCodeGuessComment
 
 -- the key to get the drift on more and more track is to keep prompting the user to 
 -- ask if the code is better than before or worse than before after each iteration
@@ -68,21 +68,21 @@ fromCodeGuessComment
 -- if stack overflow isnt one of the top searches, like the first one or the second one. Then this means the search is bad.
 -- We never should go past the first 5 links provided by google.
 
-closestWellFormedTerm term -- from a comment use edit distance to try to acquire a well formed term.
+--closestWellFormedTerm term -- from a comment use edit distance to try to acquire a well formed term.
 -- Return the well formed term with the smallest edit distance from the comment
 
-googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
-htmlResearcher -- take in a url and research string and output relevant text from the url
-htmlDesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
-exampleFinder -- take in a url and research string and pull an example from the url of using the research string
-compilerError -- take in a string and then run a compiler on that string and give back the error message
-commentNamer -- take in a comment and give a name for that comment
-haskellNamer -- take in haskell code and give it a name
-stringToHaskellConverter -- take in a comment and convert to haskell code
-nameToHaskellConverter -- take in a name and convert to haskell code
-nameCommenter -- take in a name and provide a comment of what it does
-compilerErrorGoogler :: String -> String -> String -> String -- InputFile -> ErrorMessage -> SearchEngine -> OutputFile
-google :: String -> [String] -- google the error
+--googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
+--htmlResearcher -- take in a url and research string and output relevant text from the url
+--htmlDesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
+--exampleFinder -- take in a url and research string and pull an example from the url of using the research string
+--compilerError -- take in a string and then run a compiler on that string and give back the error message
+--commentNamer -- take in a comment and give a name for that comment
+--haskellNamer -- take in haskell code and give it a name
+--stringToHaskellConverter -- take in a comment and convert to haskell code
+--nameToHaskellConverter -- take in a name and convert to haskell code
+--nameCommenter -- take in a name and provide a comment of what it does
+--compilerErrorGoogler :: String -> String -> String -> String -- InputFile -> ErrorMessage -> SearchEngine -> OutputFile
+--google :: String -> [String] -- google the error
 --https://www.quora.com/Is-there-an-API-for-Google-search-results
 --use wget?
 --wget www.google.com
@@ -101,10 +101,10 @@ google :: String -> [String] -- google the error
 --apply fix to inputfile
 --output fixed file
 
-runtimeerror :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
+--runtimeerror :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
 -- same stuff as above
 
-oserrorgoogler :: String -> String -- ErrorMessage -> String of bash commands
+--oserrorgoogler :: String -> String -- ErrorMessage -> String of bash commands
 --google the error
 --go on on a forum and get the answer
 --output the answer
