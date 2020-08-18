@@ -17,9 +17,9 @@ main = do
         putStrLn "Im gonna now attempt to compile this code for you <3"
         (_, Just hout, _, _) <- runGHC file
         errorMessage <- hGetContents hout
-        putStrLn "Oh NOES!!! It errored :( Lets google this error!"
-        duckduckgoSearcher(errorMessage)
-        putStrLn errorMessage
+        putStrLn "Im gonna search" ++ errorMessage
+        duckduckgoSearches <- duckduckgoSearcher(errorMessage)
+        putStrLn duckduckgoSearches
     
      
       
