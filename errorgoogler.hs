@@ -8,7 +8,7 @@ googlescraper String -> [String] -- take a string and google it and then give re
 
 googledesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlresearcher -- take in a url and research string and output relevant text from the url
-htmldesugarer -- take in a text file(string) and replace urls with htmlresearcher(url)
+htmldesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
 examplefinder -- take in a url and research string and pull an example from the url of using the research string
 compilererror -- take in a string and then run a compiler on that string and give back the error message
 stringnamer -- take in a string and give a name for that string
