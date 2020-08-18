@@ -9,6 +9,9 @@ compilererrorgoogler :: String -> String -> String -- InputFile -> ErrorMessage 
 --apply fix to inputfile
 --output fixed file
 
+runtimeerror :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
+-- same stuff as above
+
 oserrorgoogler :: String -> String -- ErrorMessage -> String of bash commands
 --google the error
 --go on on a forum and get the answer
