@@ -14,9 +14,8 @@ main = do
         inputCode <- readFile file
         putStr inputCode
         putStrLn "Im gonna now attempt to compile this code for you <3"
-        (_, Just hout, _, _) <- createProcess (proc "ls" []){ std_out = CreatePipe }
+        (_, Just errorMessage, _, _) <- createProcess (proc "ghc" [inputCode]){ std_out = CreatePipe }
         putStrLn "Oh NOES!!! It errored :( Lets google this error!"
-        putStrLn hout
     
      
       
