@@ -17,12 +17,12 @@ searchURLExtractor html searchString = regexExtractor html searchString --finds 
 searchDuckduckgoForURLs searchString = searchURLExtractor(duckduckgoSearcher(searchString))
 visitURLs uRLs = map wget uRLs
 searchDuckduckgoAndVisitURLs searchString = visitURLs searchDuckduckgoForURLs searchString
-searchDuckduckgoAndVisitStackoverflow
-searchGoogleAndVisitStackoverflow
+-- searchDuckduckgoAndVisitStackoverflow
+-- searchGoogleAndVisitStackoverflow
 -- filter through to get the code snippits and terminal commands, anything formatted in some code block
-getTopRatedAnswer -- filter for the top rated answer
-filterForCodeBlocks -- filter for code blocks
-filterForRun -- search for the word run
+-- getTopRatedAnswer -- filter for the top rated answer
+-- filterForCodeBlocks -- filter for code blocks
+-- filterForRun -- search for the word run
 
 guessAtSolution errorMessage = filterForCodeBlocks(getTopRatedAnswer(searchDuckduckgoAndVisitStackoverflow(errorMessage)))
 -- applySolutionSnippitToSloppyCode sloppyCode solutionSnippit = --TODO
