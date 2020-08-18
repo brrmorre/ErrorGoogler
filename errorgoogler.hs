@@ -1,5 +1,6 @@
 -- I could import this maybe http://hackage.haskell.org/package/google-drive-0.4.1/docs/Network-Google-Api.html
 -- I could import this maybe https://hackage.haskell.org/package/google-server-api
+-- mike was here
 
 compilererrorgoogler :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
 --google the error
