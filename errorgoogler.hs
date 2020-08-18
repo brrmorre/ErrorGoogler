@@ -8,7 +8,7 @@ import Text.Regex.TDFA
 import Text.Regex.TDFA ()
 
 main = do
-    inputCode <- getArgs
+    args <- getArgs
     case args of 
       [file] -> do
         inputCode <- readFile file
