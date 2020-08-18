@@ -25,6 +25,9 @@ getTopRatedAnswer -- filter for the top rated answer
 filterForCodeBlocks -- filter for code blocks
 filterForRun -- search for the word run
 
+--run a loop that makes an attempt for a solution and then applies it and then recompiles
+--and then keeps doing this process until no more compiler errors
+
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
 htmlDesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
