@@ -3,6 +3,7 @@
 -- mike was here
 
 builder -- take a string and google it and then give relevant htmls
+googledesugarer -- take in a text file(string) and replace google searches with relevant htmls from google
 compilererrorgoogler :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
 google :: String -> [String] --google the error
 --https://www.quora.com/Is-there-an-API-for-Google-search-results
