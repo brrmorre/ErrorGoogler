@@ -9,7 +9,7 @@ whiteSpaceToPlusConverter string = map (\character -> if character==' ' then '+'
 uRLConverter searchString = whiteSpaceToPlusConverter searchString
 duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter searchString -- convert a search string into a duckduckgo search url
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
-grep searchWord = (proc "grep" searchWord)
+grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
 
 main = print ((duckduckgoSearcher "stackoverflow") =~ "[a-z]+" :: String)
 
