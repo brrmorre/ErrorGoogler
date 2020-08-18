@@ -17,6 +17,8 @@ grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
 
 main = print ((duckduckgoSearcher "stackoverflow") =~ "[a-z]+" :: String)
 
+--search stackoverflow and code base for examples of working code that uses the stuff that is incorrectly used as a result of the error message
+
 --regexExtractor :: IO(Maybe GHC.IO.Handle.Types.Handle,
 --                              Maybe GHC.IO.Handle.Types.Handle, Maybe GHC.IO.Handle.Types.Handle,
 --                              ProcessHandle) -> String
