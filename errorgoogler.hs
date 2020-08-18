@@ -10,6 +10,8 @@ googledesugarer -- take in a text file(string) and replace google searches with 
 htmlresearcher -- take in a url and research string and output relevant text from the url
 htmldesugarer -- take in a text file(string) and replace urls with htmlresearcher(url)
 examplefinder -- take in a url and research string and pull an example from the url of using the research string
+compilererror -- take in a string and then run a compiler on that string and give back the error message
+stringnamer -- take in a string and give a name for that string
 compilererrorgoogler :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
 google :: String -> [String] --google the error
 --https://www.quora.com/Is-there-an-API-for-Google-search-results
