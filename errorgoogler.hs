@@ -37,6 +37,8 @@ listenToUser -- listen to the user using SpeechToText (returns what the user sai
 writeCode = listenToUser --and then write down users speech as a comment in the code file where the user specifies
                          --then ask if it looks good If NO then undo last proposed comment
                                                    --If YES then commit proposed comment
+-- the strategy is to slowly convert the english comments from the user into haskell code
+-- then keep running compiler and removing compiler errors until it can compile
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
