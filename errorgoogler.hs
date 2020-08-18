@@ -42,6 +42,7 @@ writeCode = listenToUser --and then write down users speech as a comment in the 
 --         add support for deleting comments
 --         "So... How do you want to implement this comment? I can suggest some names..."
 --         "how would that function work?"
+-- When the error message is "This thing isnt defined, then ask the user if they wanna define it"
            "What sorts of functions do you need?"
 -- then keep running compiler and removing compiler errors until it can compile
 
