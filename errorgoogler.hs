@@ -18,8 +18,11 @@ searchURLExtractor html searchString = regexExtractor html searchString --finds 
 searchDuckduckgoForURLs searchString = searchURLExtractor(duckduckgoSearcher(searchString))
 visitURLs uRLs = map wget uRLs
 searchDuckduckgoAndVisitURLs searchString = visitURLs searchDuckduckgoForURLs searchString
-
+searchDuckduckgoAndVisitStackoverflow
+searchGoogleAndVisitStackoverflow
 -- filter through to get the code snippits and terminal commands, anything formatted in some code block
+getTopRatedAnswer -- filter for the top rated answer
+filterForRun -- search for the word run
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
