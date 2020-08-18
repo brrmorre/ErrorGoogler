@@ -59,7 +59,9 @@ fromCodeGuessComment
 -- the machine can also keep questioning how the user wants to do something
 
 -- ask the user for coarse idea of what they want the program to do or the feature they wanna add
--- keep fleshing out the feature more and more by creating functions. Go downwards in abstraction
+-- keep fleshing out the feature more and more by creating functions. It keeps prompting the user on how
+-- exactly they want to implement key parts of the idea
+-- Go downwards in abstraction
 -- idea -> implementation
 -- go on stack overflow to flesh out the details of the implentation and correct errors
 
