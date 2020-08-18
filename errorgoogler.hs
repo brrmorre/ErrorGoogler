@@ -2,13 +2,14 @@
 -- I could import this maybe https://hackage.haskell.org/package/google-server-api
 -- mike was here
 import System.Process
-import Text.Regex.TDFA.Text ()
+--import Text.Regex.TDFA.Text ()
 
 wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]) -- should dump the html from the url
 whiteSpaceToPlusConverter string = map (\character -> if character==' ' then '+'; else character) string
 uRLConverter searchString = whiteSpaceToPlusConverter searchString
 duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter searchString -- convert a search string into a duckduckgo search url
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
+grep searchWord = (proc "grep" searchWord)
 
 main = print ((duckduckgoSearcher "stackoverflow") =~ "[a-z]+" :: String)
 
