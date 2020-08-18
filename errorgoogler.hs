@@ -16,7 +16,7 @@ main = do
         putStrLn "Im gonna now attempt to compile this code for you <3"
         (_, Just hout, _, _) <- createProcess (proc "ls" []){ std_out = CreatePipe }
         putStrLn "Oh NOES!!! It errored :( Lets google this error!"
-        print hout
+        putStrLn hout
     
      
       
