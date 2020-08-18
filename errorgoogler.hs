@@ -11,6 +11,9 @@ duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 regexExtractor searchString = (searchString =~ "[a-z]+") :: [String]--extract searchstring from html using regex
 searchURLExtractor html searchString = regexExtractor html searchString --finds URLs *matching some TBD specification* in html
 
+errorSearcher :: String -> String -> String -> String -- InputFile -> ErrorMessage -> SearchEngine -> OutputFile
+errorSearcher InputFile ErrorMessage SearchEngine = ""
+
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
 htmlDesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
