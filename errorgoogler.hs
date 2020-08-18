@@ -14,6 +14,8 @@ google :: String -> [String] --google the error
 --compilererrorgoogler(InputFile, ErrorMessage, OutputFile)
 --google(errorToURL(ErrorMessage)) where google is a wrapper for wget and errorToURL takes in the error as input and outputs a url
 --https://hackage.haskell.org/package/scalpel-0.6.2/src/src/Text/HTML/Scalpel.hs
+--https://hackage.haskell.org/package/http-wget
+--https://hackage.haskell.org/package/scalpel-0.6.2/src/src/Text/HTML/Scalpel/Internal/Scrape/URL.hs
 --go on stack overflow
 --apply fix to inputfile
 --output fixed file
