@@ -40,7 +40,13 @@ writeCode = listenToUser --and then write down users speech as a comment in the 
 -- the strategy is to slowly convert the english comments from the user into haskell code
 -- be like "what do you want to do?"
 --         "how would that function work?"
+           "What sorts of functions do you need?"
 -- then keep running compiler and removing compiler errors until it can compile
+
+fromCommentGuessFunctionName
+fromFunctionNameGuessCode
+fromCodeGuessComment
+
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
