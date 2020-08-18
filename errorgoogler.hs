@@ -15,7 +15,7 @@ main = "hello world"
 --regexExtractor :: IO(Maybe GHC.IO.Handle.Types.Handle,
 --                              Maybe GHC.IO.Handle.Types.Handle, Maybe GHC.IO.Handle.Types.Handle,
 --                              ProcessHandle) -> String
-regexExtractor html = html =~ "*stackoverflow*" --extract searchstring from html using regex
+--regexExtractor html = html =~ "*stackoverflow*" --extract searchstring from html using regex
 --https://regex101.com/
 -- ^(https:\/\/|http:\/\/|)stackoverflow\.com.*
 -- searchURLExtractor html = regexExtractor html --finds URLs *matching some TBD specification* in html
