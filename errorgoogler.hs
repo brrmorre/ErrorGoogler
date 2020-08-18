@@ -9,7 +9,8 @@ whiteSpaceToPlusConverter string = map (\character -> if character==' ' then '+'
 uRLConverter searchString = whiteSpaceToPlusConverter searchString
 duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter searchString -- convert a search string into a duckduckgo search url
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
-regexExtractor html = (html =~ "*stackoverflow*" :: String) --extract searchstring from html using regex
+
+regexExtractor (html :: String) = (html =~ "*stackoverflow*" :: String) --extract searchstring from html using regex
 --https://regex101.com/
 -- ^(https:\/\/|http:\/\/|)stackoverflow\.com.*
 -- searchURLExtractor html = regexExtractor html --finds URLs *matching some TBD specification* in html
