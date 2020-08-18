@@ -13,6 +13,7 @@ searchURLExtractor html searchString = regexExtractor html searchString --finds 
 
 searchDuckduckgoForURLs searchString = searchURLExtractor(duckduckgoSearcher(searchString))
 visitURLs uRLs = map wget uRLs
+simpleDuckduckgoSearch searchString = visitURLs searchDuckduckgoForURLs searchString
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
