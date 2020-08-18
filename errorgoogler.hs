@@ -12,7 +12,7 @@ google :: String -> [String] --google the error
 --https://moz.com/blog/the-ultimate-guide-to-the-google-search-parameters
 --wget http://www.google.com/search?q=query+goes+here
 --compilererrorgoogler(InputFile, ErrorMessage, OutputFile)
---google(prepforgoogle(ErrorMessage))
+--google(errorToURL(ErrorMessage)) where google is a wrapper for wget and errorToURL takes in the error as input and outputs a url
 --https://hackage.haskell.org/package/scalpel-0.6.2/src/src/Text/HTML/Scalpel.hs
 --go on stack overflow
 --apply fix to inputfile
