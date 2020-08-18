@@ -16,8 +16,9 @@ main = do
         putStr inputCode
         putStrLn "Im gonna now attempt to compile this code for you <3"
         (_, Just hout, _, _) <- createProcess (proc "ghc" [file]){ std_out = CreatePipe }
+        errorMessage <- hGetContents hout
         putStrLn "Oh NOES!!! It errored :( Lets google this error!"
-        duckduckgoSearcher(hGetContents hout)
+        duckduckgoSearcher(errorMessage)
     
      
       
