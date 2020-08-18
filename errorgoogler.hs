@@ -38,9 +38,10 @@ htmlResearcher -- take in a url and research string and output relevant text fro
 htmlDesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
 exampleFinder -- take in a url and research string and pull an example from the url of using the research string
 compilerError -- take in a string and then run a compiler on that string and give back the error message
-stringNamer -- take in a string and give a name for that string
-stringToHaskellConverter -- take in a string and convert to haskell
-nameToHaskellConverter -- take in a name and convert to haskell
+commentNamer -- take in a comment and give a name for that comment
+haskellNamer -- take in haskell code and give it a name
+stringToHaskellConverter -- take in a comment and convert to haskell code
+nameToHaskellConverter -- take in a name and convert to haskell code
 nameCommenter -- take in a name and provide a comment of what it does
 compilerErrorGoogler :: String -> String -> String -> String -- InputFile -> ErrorMessage -> SearchEngine -> OutputFile
 google :: String -> [String] -- google the error
