@@ -19,8 +19,9 @@ grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
 
 --search stackoverflow and code base for examples of working code that uses the stuff that is incorrectly used as a result of the error message
 --copy paste example and make it fit into problem area.
---randomly edit the code around the problem area and see if it compiles.
+--use HEURISTICS to edit the code around the problem area and see if it compiles.
 --the editing of the code guess to see if it compiles should atleast try to make it look like it knows what its doing
+--it should know the form of the correct code and then try to modify its own code to try to replicate the form of the correct code
 --we dont need to know what we are doing as long as it compiles. LOL
 
 --regexExtractor :: IO(Maybe GHC.IO.Handle.Types.Handle,
