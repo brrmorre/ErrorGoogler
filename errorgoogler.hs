@@ -10,7 +10,9 @@ uRLConverter searchString = whiteSpaceToPlusConverter searchString
 duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter searchString -- convert a search string into a duckduckgo search url
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 
-regexExtractor :: String -> String
+regexExtractor :: IO(Maybe GHC.IO.Handle.Types.Handle,
+                              Maybe GHC.IO.Handle.Types.Handle, Maybe GHC.IO.Handle.Types.Handle,
+                              ProcessHandle) -> String
 regexExtractor html = html =~ "*stackoverflow*" --extract searchstring from html using regex
 --https://regex101.com/
 -- ^(https:\/\/|http:\/\/|)stackoverflow\.com.*
