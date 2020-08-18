@@ -8,6 +8,7 @@ google :: String -> [String] --google the error
 --use wget?
 --wget www.google.com
 --wget -r www.google.com
+--https://hackage.haskell.org/package/scalpel
 --go on stack overflow
 --apply fix to inputfile
 --output fixed file
