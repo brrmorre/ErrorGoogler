@@ -68,6 +68,9 @@ fromCodeGuessComment
 -- if stack overflow isnt one of the top searches, like the first one or the second one. Then this means the search is bad.
 -- We never should go past the first 5 links provided by google.
 
+closestWellFormedTerm term -- from a comment use edit distance to try to acquire a well formed term.
+-- Return the well formed term with the smallest edit distance from the comment
+
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
 htmlDesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
