@@ -20,9 +20,9 @@ regexExtractor html = html =~ "*stackoverflow*" --extract searchstring from html
 -- ^(https:\/\/|http:\/\/|)stackoverflow\.com.*
 -- searchURLExtractor html = regexExtractor html --finds URLs *matching some TBD specification* in html
 
-searchDuckduckgoForURLs searchString = regexExtractor(duckduckgoSearcher(searchString))
-visitURLs uRLs = map wget uRLs
-searchDuckduckgoAndVisitURLs searchString = visitURLs(searchDuckduckgoForURLs searchString)
+-- searchDuckduckgoForURLs searchString = regexExtractor(duckduckgoSearcher(searchString))
+-- visitURLs uRLs = map wget uRLs
+-- searchDuckduckgoAndVisitURLs searchString = visitURLs(searchDuckduckgoForURLs searchString)
 -- searchDuckduckgoAndVisitStackoverflow
 -- searchGoogleAndVisitStackoverflow
 -- filter through to get the code snippits and terminal commands, anything formatted in some code block
@@ -30,11 +30,11 @@ searchDuckduckgoAndVisitURLs searchString = visitURLs(searchDuckduckgoForURLs se
 -- filterForCodeBlocks -- filter for code blocks
 -- filterForRun -- search for the word run
 
-guessAtSolution errorMessage = filterForCodeBlocks(getTopRatedAnswer(searchDuckduckgoAndVisitStackoverflow(errorMessage)))
+-- guessAtSolution errorMessage = filterForCodeBlocks(getTopRatedAnswer(searchDuckduckgoAndVisitStackoverflow(errorMessage)))
 -- applySolutionSnippitToSloppyCode sloppyCode solutionSnippit = --TODO
-runGHC code = createProcess (proc "ghc" [code])
+-- runGHC code = createProcess (proc "ghc" [code])
 -- runSloppyCodeAndImproveByOneIteration sloppyCode = applySolutionSnippitToSloppyCode sloppyCode (guessAtSolution runGHC(sloppyCode))
-codeCompilesWithoutError code = runGHC(code) == gHCSuccessMessage
+-- codeCompilesWithoutError code = runGHC(code) == gHCSuccessMessage
 
 -- fixCode code = if codeCompilesWithoutError code then code else fixCode (runSloppyCodeAndImproveByOneIteration code)
 
