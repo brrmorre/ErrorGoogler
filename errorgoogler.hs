@@ -12,7 +12,7 @@ regexExtractor searchString = (searchString =~ "[a-z]+") :: [String]--extract se
 searchURLExtractor html searchString = regexExtractor html searchString --finds URLs *matching some TBD specification* in html
 
 searchDuckduckgoForURLs searchString = searchURLExtractor(duckduckgoSearcher(searchString))
-visitURLs uRLs = 
+visitURLs uRLs = map wget uRLs
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
