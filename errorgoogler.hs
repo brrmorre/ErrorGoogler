@@ -50,7 +50,7 @@ fromCodeGuessComment
 -- the key to get the drift on more and more track is to keep prompting the user to 
 -- ask if the code is better than before or worse than before after each iteration
 -- ask the user for input and keep asking the user, the compiler, google(stack overflow)
--- FORMAT THE CODE TO PASS LINTING
+-- AUTO FORMAT THE CODE TO BE PRETTY FOR ME. ILL MAKE THE FORMATTER BETTER IF IT SCREWS UP.
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
