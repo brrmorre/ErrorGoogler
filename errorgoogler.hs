@@ -8,8 +8,8 @@ googleScraper :: String -> [String] -- take a string and google it and then give
 wget url = createProcess (proc "wget" ["-q", url, "-O", "-"]) -- should dump the html from the url
 whiteSpaceToPlusConverter string = map (\character -> if character==' ' then '+'; else character) string
 uRLConverter searchString = whiteSpaceToPlusConverter searchString
-duckduckgoConverter searchString = "duckduckgo.com/search?q=" + uRLConverter searchString -- convert a search string into a duckduckgo search url
-duckduckgoSearcher searchString = wget duckduckgoConverter searchString
+duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter searchString -- convert a search string into a duckduckgo search url
+duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
