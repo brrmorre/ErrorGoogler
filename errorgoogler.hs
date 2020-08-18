@@ -13,6 +13,8 @@ main = do
       [file] -> do
         inputCode <- readFile file
         putStr inputCode
+        putStrLn "Im gonna now attempt to compile this code for you <3"
+        runGHC file
       _ -> putStrLn "Wrong number of arguments"
     
      
