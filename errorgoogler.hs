@@ -3,7 +3,7 @@
 -- mike was here
 
 googlescraper -- take a string and google it and then give relevant urls/relevant text from the html
-googledesugarer -- take in a text file(string) and replace google searches with relevant urls from google
+googledesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlresearcher -- take in a url and research string and output relevant text from the url
 htmldesugarer -- take in a text file(string) and replace urls with htmlresearcher(url)
 compilererrorgoogler :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
