@@ -15,17 +15,17 @@ main = do
         inputCode <- readFile file
         putStr inputCode
         putStrLn "Im gonna now attempt to compile this code for you <3"
-        (_, Just hout, _, _) <- runGHC file
+        (_, Just ghchout, _, _) <- runGHC file
         errorMessage <- hGetContents hout
         putStrLn "Im gonna search" ++ errorMessage
-        duckduckgoSearches <- duckduckgoSearcher(errorMessage)
+        (_, Just ddghout, _, _) <- duckduckgoSearcher(errorMessage)
         putStrLn duckduckgoSearches
     
      
       
 
---wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]) -- should dump the html from the url
-wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-o", "search.html"]) -- should dump the html from the url
+wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]){ std_out = CreatePipe } -- should dump the html from the url
+--wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-o", "search.html"]) -- should dump the html from the url
 whiteSpaceToPlusConverter string = map (\character -> if character==' ' then '+'; else character) string
 uRLConverter searchString = whiteSpaceToPlusConverter searchString
 duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter searchString -- convert a search string into a duckduckgo search url
