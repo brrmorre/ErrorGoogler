@@ -30,7 +30,7 @@ applySolutionSnippitToSloppyCode sloppyCode solutionSnippit = --TODO
 attemptToCompile code = runGHC(code)
 --IF CODE HAS A BUG
 --errorMessage is runGHC(code)
-runCodeAnd = applySolutionSnippitToSloppyCode sloppyCode (guessAtSolution errorMessage)
+runSloppyCodeAndImproveByOneIteration sloppyCode = applySolutionSnippitToSloppyCode sloppyCode (guessAtSolution runGHC(sloppyCode))
 
 fixCode code --run a loop that makes an attempt for a solution and then applies it and then recompiles
 --and then keeps doing this process until no more compiler errors 
