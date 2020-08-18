@@ -6,6 +6,7 @@ googlescraper -- take a string and google it and then give relevant urls/relevan
 googledesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlresearcher -- take in a url and research string and output relevant text from the url
 htmldesugarer -- take in a text file(string) and replace urls with htmlresearcher(url)
+examplefinder -- take in a url and research string and pull an example from the url of using the research string
 compilererrorgoogler :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
 google :: String -> [String] --google the error
 --https://www.quora.com/Is-there-an-API-for-Google-search-results
