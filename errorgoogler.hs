@@ -3,8 +3,9 @@
 -- mike was here
 
 builder -- take a string and google it and then give relevant htmls
-googledesugarer -- take in a text file(string) and replace google searches with relevant htmls from google
+googledesugarer -- take in a text file(string) and replace google searches with relevant urls from google
 htmlresearcher -- take in a url and research string and output relevant text from the url
+htmldesugarer -- take in a text file(string) and replace urls with htmlresearcher(url)
 compilererrorgoogler :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
 google :: String -> [String] --google the error
 --https://www.quora.com/Is-there-an-API-for-Google-search-results
