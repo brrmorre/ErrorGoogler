@@ -29,9 +29,9 @@ guessAtSolution errorMessage = filterForCodeBlocks(getTopRatedAnswer(searchDuckd
 applySolutionSnippitToSloppyCode sloppyCode solutionSnippit = --TODO
 attemptToCompile code = runGHC(code)
 runSloppyCodeAndImproveByOneIteration sloppyCode = applySolutionSnippitToSloppyCode sloppyCode (guessAtSolution runGHC(sloppyCode))
-codeIsErrorFree code = runGHC(code) == gHCSuccessMessage
+codeCompilesWithoutError code = runGHC(code) == gHCSuccessMessage
 
-fixCode code = if codeIsErrorFree code then code else fixCode (runSloppyCodeAndImproveByOneIteration code)
+fixCode code = if codeCompilesWithoutError code then code else fixCode (runSloppyCodeAndImproveByOneIteration code)
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
