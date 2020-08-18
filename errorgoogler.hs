@@ -33,6 +33,8 @@ codeCompilesWithoutError code = runGHC(code) == gHCSuccessMessage
 
 fixCode code = if codeCompilesWithoutError code then code else fixCode (runSloppyCodeAndImproveByOneIteration code)
 
+listenToUser -- listen to the user using SpeechToText (returns what the user said physically)
+
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
 htmlDesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
