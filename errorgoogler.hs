@@ -27,8 +27,7 @@ filterForRun -- search for the word run
 
 guessAtSolution errorMessage = filterForCodeBlocks(getTopRatedAnswer(searchDuckduckgoAndVisitStackoverflow(errorMessage)))
 applySolutionSnippitToSloppyCode sloppyCode solutionSnippit = --TODO
-attemptToCompile code = runGHC(code)
-runGHC code = 
+runGHC code = createProcess (proc "ghc" [code])
 runSloppyCodeAndImproveByOneIteration sloppyCode = applySolutionSnippitToSloppyCode sloppyCode (guessAtSolution runGHC(sloppyCode))
 codeCompilesWithoutError code = runGHC(code) == gHCSuccessMessage
 
