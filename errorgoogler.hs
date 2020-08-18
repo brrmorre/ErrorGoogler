@@ -26,7 +26,11 @@ filterForCodeBlocks -- filter for code blocks
 filterForRun -- search for the word run
 
 guessAtSolution errorMessage = filterForCodeBlocks(getTopRatedAnswer(searchDuckduckgoAndVisitStackoverflow(errorMessage)))
-applySolutionSnippitToSloppyCode sloppyCode solutionSnippit
+applySolutionSnippitToSloppyCode sloppyCode solutionSnippit = --TODO
+attemptToCompile code = runGHC(code)
+--IF CODE HAS A BUG
+--errorMessage is runGHC(code)
+runCodeAnd = applySolutionSnippitToSloppyCode sloppyCode (guessAtSolution errorMessage)
 
 fixCode code --run a loop that makes an attempt for a solution and then applies it and then recompiles
 --and then keeps doing this process until no more compiler errors 
