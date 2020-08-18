@@ -14,6 +14,7 @@ main = do
         x <- readFile file
         putStr x
       _ -> putStrLn "Wrong number of arguments"
+      
 
 --wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]) -- should dump the html from the url
 wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-o", "search.html"]) -- should dump the html from the url
@@ -28,6 +29,7 @@ grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
 
 --google keywords like example or stackoverflow or tutorial
 --search stackoverflow and code base for examples of working code that uses the stuff that is incorrectly used as a result of the error message
+--ask the user if the example is a good example
 --copy paste example and make it fit into problem area.
 --figure out the form of the solution and then change your own code to replicate the form of the solution
 --use HEURISTICS to edit the code around the problem area and see if it compiles.
