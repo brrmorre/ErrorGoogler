@@ -19,7 +19,7 @@ main = do
         errorMessage <- hGetContents hout
         putStrLn "Im gonna search" ++ errorMessage
         (_, Just ddghout, _, _) <- duckduckgoSearcher(errorMessage)
-        putStrLn duckduckgoSearches
+        putStrLn ddghout
     
      
       
