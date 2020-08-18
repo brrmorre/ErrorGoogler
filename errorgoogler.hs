@@ -22,6 +22,7 @@ searchDuckduckgoAndVisitStackoverflow
 searchGoogleAndVisitStackoverflow
 -- filter through to get the code snippits and terminal commands, anything formatted in some code block
 getTopRatedAnswer -- filter for the top rated answer
+filterForCodeBlocks -- filter for code blocks
 filterForRun -- search for the word run
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
