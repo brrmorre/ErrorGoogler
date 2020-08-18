@@ -58,6 +58,11 @@ fromCodeGuessComment
 -- the machine takes the comment and can guess a formal language statement that is similar to what the comment specifies
 -- the machine can also keep questioning how the user wants to do something
 
+-- ask the user for coarse idea of what they want the program to do or the feature they wanna add
+-- keep fleshing out the feature more and more by creating functions. Go downwards in abstraction
+-- idea -> implementation
+-- go on stack overflow to flesh out the details of the implentation and correct errors
+
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
 htmlDesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
