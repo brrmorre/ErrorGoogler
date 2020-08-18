@@ -2,6 +2,7 @@
 -- I could import this maybe https://hackage.haskell.org/package/google-server-api
 -- mike was here
 
+builder -- take a string and google it and then give relevant htmls
 compilererrorgoogler :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
 google :: String -> [String] --google the error
 --https://www.quora.com/Is-there-an-API-for-Google-search-results
