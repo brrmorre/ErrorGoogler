@@ -10,7 +10,7 @@ whiteSpaceToPlusConverter string = map (\character -> if character==' ' then '+'
 uRLConverter searchString = whiteSpaceToPlusConverter searchString
 duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter searchString -- convert a search string into a duckduckgo search url
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
-regexExtractor html searchString filterWord = (searchString =~ "[a-z]+") :: [String]--extract searchstring from html using regex
+regexExtractor html searchString filterWord = (searchString =~ "[a-z]+") :: [String] --extract searchstring from html using regex
 --https://regex101.com/
 -- ^(https:\/\/|http:\/\/|)stackoverflow\.com.*
 searchURLExtractor html searchString = regexExtractor html searchString --finds URLs *matching some TBD specification* in html
@@ -25,8 +25,12 @@ getTopRatedAnswer -- filter for the top rated answer
 filterForCodeBlocks -- filter for code blocks
 filterForRun -- search for the word run
 
---run a loop that makes an attempt for a solution and then applies it and then recompiles
---and then keeps doing this process until no more compiler errors
+guessAtSolution code errorMessage = filterForCodeBlocks(getTopRatedAnswer(searchDuckduckgoAndVisitStackoverflow(errorMessage)))
+
+fixCode code --run a loop that makes an attempt for a solution and then applies it and then recompiles
+--and then keeps doing this process until no more compiler errors 
+
+
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
