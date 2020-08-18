@@ -21,6 +21,7 @@ google :: String -> [String] --google the error
 --https://hackage.haskell.org/package/http-wget
 --https://hackage.haskell.org/package/scalpel-0.6.2/src/src/Text/HTML/Scalpel/Internal/Scrape/URL.hs
 --https://hackage.haskell.org/package/http-conduit
+--https://stackoverflow.com/questions/3470955/executing-a-system-command-in-haskell
 --go on stack overflow
 --apply fix to inputfile
 --output fixed file
