@@ -19,6 +19,8 @@ searchDuckduckgoForURLs searchString = searchURLExtractor(duckduckgoSearcher(sea
 visitURLs uRLs = map wget uRLs
 searchDuckduckgoAndVisitURLs searchString = visitURLs searchDuckduckgoForURLs searchString
 
+-- filter through to get the code snippits and terminal commands, anything formatted in some code block
+
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
 htmlDesugarer -- take in a text file(string) and replace urls with htmlresearcher(url) and examplefinder(htmlresearcher(url))
