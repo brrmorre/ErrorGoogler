@@ -17,6 +17,7 @@ grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
 
 --main = print ((duckduckgoSearcher "stackoverflow") =~ "[a-z]+" :: String)
 
+--google keywords like example or stackoverflow or tutorial
 --search stackoverflow and code base for examples of working code that uses the stuff that is incorrectly used as a result of the error message
 --copy paste example and make it fit into problem area.
 --figure out the form of the solution and then change your own code to replicate the form of the solution
