@@ -19,6 +19,7 @@ main = do
         errorMessage <- hGetContents hout
         putStrLn "Oh NOES!!! It errored :( Lets google this error!"
         duckduckgoSearcher(errorMessage)
+        putStrLn errorMessage
     
      
       
