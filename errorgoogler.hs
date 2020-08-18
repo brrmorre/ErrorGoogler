@@ -8,12 +8,14 @@ import Text.Regex.TDFA
 import Text.Regex.TDFA ()
 
 main = do
-    args <- getArgs
+    inputCode <- getArgs
     case args of 
       [file] -> do
-        x <- readFile file
-        putStr x
+        inputCode <- readFile file
+        putStr inputCode
       _ -> putStrLn "Wrong number of arguments"
+    
+     
       
 
 --wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]) -- should dump the html from the url
@@ -24,6 +26,7 @@ duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter se
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 stackoverflowURLFinder html = (html =~ ("(https://|http://)?([^./]+[.])?stackoverflow[.]com.*" :: String)) :: [[String]]
 grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
+searchDuckduckgoForStackoverflowURLs searchString = stackoverflowURLFinder(duckduckgoSearcher(searchString))
 
 --main = print ((duckduckgoSearcher "stackoverflow") =~ "[a-z]+" :: String)
 
@@ -45,7 +48,6 @@ grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
 -- ^(https:\/\/|http:\/\/|)stackoverflow\.com.*
 -- searchURLExtractor html = regexExtractor html --finds URLs *matching some TBD specification* in html
 
--- searchDuckduckgoForURLs searchString = regexExtractor(duckduckgoSearcher(searchString))
 -- visitURLs uRLs = map wget uRLs
 -- searchDuckduckgoAndVisitURLs searchString = visitURLs(searchDuckduckgoForURLs searchString)
 -- searchDuckduckgoAndVisitStackoverflow
