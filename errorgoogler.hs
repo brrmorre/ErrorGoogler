@@ -10,7 +10,7 @@ uRLConverter searchString = whiteSpaceToPlusConverter searchString
 duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter searchString -- convert a search string into a duckduckgo search url
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 
-main = "hello world"
+main = print duckduckgoSearcher "test"
 
 --regexExtractor :: IO(Maybe GHC.IO.Handle.Types.Handle,
 --                              Maybe GHC.IO.Handle.Types.Handle, Maybe GHC.IO.Handle.Types.Handle,
