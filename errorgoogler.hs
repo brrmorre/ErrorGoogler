@@ -16,6 +16,7 @@ main = do
         putStrLn "Im gonna now attempt to compile this code for you <3"
         errorMessage <- runGHC file
         putStrLn "Oh NOES!!! It errored :( Lets google this error!"
+        print errorMessage
     
      
       
