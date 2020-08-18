@@ -11,6 +11,7 @@ google :: String -> [String] --google the error
 --https://hackage.haskell.org/package/scalpel
 --https://moz.com/blog/the-ultimate-guide-to-the-google-search-parameters
 --wget http://www.google.com/search?q=query+goes+here
+--https://hackage.haskell.org/package/scalpel-0.6.2/src/src/Text/HTML/Scalpel.hs
 --go on stack overflow
 --apply fix to inputfile
 --output fixed file
