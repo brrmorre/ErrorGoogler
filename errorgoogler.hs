@@ -14,7 +14,8 @@ main = do
         inputCode <- readFile file
         putStr inputCode
         putStrLn "Im gonna now attempt to compile this code for you <3"
-        runGHC file
+        errorMessage <- runGHC file
+        putStrLn "Oh NOES!!! It errored :( Lets google this error!"
     
      
       
