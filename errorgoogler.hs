@@ -5,6 +5,7 @@
 compilererrorgoogler :: String -> String -> String -- InputFile -> ErrorMessage -> OutputFile
 google :: String -> [String] --google the error
 --https://www.quora.com/Is-there-an-API-for-Google-search-results
+--use wget?
 --go on stack overflow
 --apply fix to inputfile
 --output fixed file
