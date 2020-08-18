@@ -6,6 +6,7 @@ import System.Environment
 import System.Process
 import Text.Regex.TDFA
 import Text.Regex.TDFA ()
+import IO
 
 main = do
     args <- getArgs
