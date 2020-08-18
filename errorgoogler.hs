@@ -31,9 +31,9 @@ attemptToCompile code = runGHC(code)
 --IF CODE HAS A BUG
 --errorMessage is runGHC(code)
 runSloppyCodeAndImproveByOneIteration sloppyCode = applySolutionSnippitToSloppyCode sloppyCode (guessAtSolution runGHC(sloppyCode))
+codeIsErrorFree code = 
 
-fixCode code = -- if code compiles without errors then return code
-               -- else fixCode (runSloppyCodeAndImproveByOneIteration code)
+fixCode code = if codeIsErrorFree code then code else fixCode (runSloppyCodeAndImproveByOneIteration code)
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
