@@ -6,7 +6,7 @@ import System.Process
 googleScraper :: String -> [String] -- take a string and google it and then give relevant urls/relevant text from the html
 
 wget url = createProcess (proc "wget" ["-q", url, "-O", "-"]) -- should dump the html from the url
-duckduckgoconverter searchString = "duckduckgo.com/search?q=" + uRLConverter searchString-- convert a search string into a duckduckgo search url
+duckduckgoConverter searchString = "duckduckgo.com/search?q=" + uRLConverter searchString -- convert a search string into a duckduckgo search url
 
 googleDesugarer -- take in a text file(string) and replace google searches with googlescraper(google search)
 htmlResearcher -- take in a url and research string and output relevant text from the url
