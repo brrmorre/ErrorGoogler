@@ -15,8 +15,8 @@ main = do
         inputCode <- readFile file
         putStr inputCode
         putStrLn "Im gonna now attempt to compile this code for you <3"
-        (_, Just ghchout, _, _) <- runGHC file
-        errorMessage <- hGetContents ghchout
+        (_, Just ghchout, Just ghcherror, _) <- runGHC file
+        errorMessage <- hGetContents ghcherror
         (_, Just ddghout, _, _) <- duckduckgoSearcher(errorMessage)
         searchResultHTML <- hGetContents ddghout
         putStrLn searchResultHTML
