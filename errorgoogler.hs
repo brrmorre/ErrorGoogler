@@ -15,7 +15,7 @@ main = do
         inputCode <- readFile file
         putStr inputCode
         putStrLn "Im gonna now attempt to compile this code for you <3"
-        (_, Just hout, _, _) <- runGHC filePath stdOut
+        (_, Just hout, _, _) <- runGHC filePath
         errorMessage <- hGetContents hout
         putStrLn "Oh NOES!!! It errored :( Lets google this error!"
         duckduckgoSearcher(errorMessage)
@@ -32,7 +32,7 @@ duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter se
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 stackoverflowURLFinder html = (html =~ ("(https://|http://)?([^./]+[.])?stackoverflow[.]com.*" :: String)) :: [[String]]
 grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
-runGHC filePath stdOut = createProcess (proc "ghc" [filePath]){ stdOut = CreatePipe }
+runGHC filePath = createProcess (proc "ghc" [filePath]){ std_out = CreatePipe }
 --searchDuckduckgoForStackoverflowURLs searchString = stackoverflowURLFinder(duckduckgoSearcher(searchString))
 
 --main = print ((duckduckgoSearcher "stackoverflow") =~ "[a-z]+" :: String)
