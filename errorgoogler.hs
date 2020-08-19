@@ -28,8 +28,11 @@ main = do
         (_, Just ghchout, Just ghcherror, _) <- runGHC file
         errorMessage <- hGetContents ghcherror
         (_, Just ddghout, _, _) <- duckduckgoSearcher(errorMessage)
-        searchResultHTML <- hGetContents ddghout
-        putStrLn searchResultHTML
+        searchResultDDGHTML <- hGetContents ddghout
+        putStrLn searchResultDDGHTML
+        (_, Just googlehout, _, _) <- googleSearcher(errorMessage)
+        searchResultGoogleHTML <- hGetContents googlehout
+        putStrLn searchResultGoogleHTML
         putStrLn (duckduckgoConverter(errorMessage))
         putStrLn errorMessage
 
