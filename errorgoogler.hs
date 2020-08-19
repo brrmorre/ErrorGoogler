@@ -10,7 +10,7 @@ import System.IO
 import Data.Char
 
 dropInvalids :: [Char] -> [Char]
-dropInvalids = filter (\x -> isLetter x|| isDigit x)
+dropInvalids = filter (\x -> isLetter x || isDigit x || isSymbol x)
 
 main = do
     args <- getArgs
