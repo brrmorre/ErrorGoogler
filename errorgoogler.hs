@@ -33,7 +33,7 @@ main = do
         (_, Just googlehout, _, _) <- googleSearcher(errorMessage)
         searchResultGoogleHTML <- hGetContents googlehout
         putStrLn searchResultGoogleHTML
-        putStrLn (stackoverflowURLFinder(searchResultGoogleHTML))
+        putStrLn (stackoverflowURLFinder(searchResultGoogleHTML).head.head)
         putStrLn (googleConverter(errorMessage))
         putStrLn errorMessage
 
