@@ -7,6 +7,7 @@ import System.Process
 import Text.Regex.TDFA
 import Text.Regex.TDFA ()
 import System.IO
+import Data.List.Split
 
 main = do
     args <- getArgs
