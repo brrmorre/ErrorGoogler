@@ -12,6 +12,9 @@ import Data.Char
 dropInvalids :: [Char] -> [Char]
 dropInvalids = filter (\x -> isLetter x || isDigit x || isSymbol x)
 
+prependHaskell inputString = "Haskell" ++ inputString
+appendStackoverflow inputString = inputString ++ "Stackoverflow"
+
 main = do
     args <- getArgs
     case args of 
