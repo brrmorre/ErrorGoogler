@@ -17,11 +17,11 @@ main = do
         putStrLn "Im gonna now attempt to compile this code for you <3"
         (_, Just ghchout, Just ghcherror, _) <- runGHC file
         errorMessage <- hGetContents ghcherror
-        (_, Just ddghout, _, _) <- duckduckgoSearcher(errorMessage)
-        searchResultHTML <- hGetContents ddghout
-        putStrLn searchResultHTML
-        putStrLn (duckduckgoConverter(errorMessage))
-        putStrLn errorMessage
+        --(_, Just ddghout, _, _) <- duckduckgoSearcher(errorMessage)
+        --searchResultHTML <- hGetContents ddghout
+        --putStrLn searchResultHTML
+        putStrLn (dropDelims . dropBlanks(duckduckgoConverter(errorMessage)))
+        --putStrLn errorMessage
 
 wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]){ std_out = CreatePipe } -- should dump the html from the url
 --wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-o", "search.html"]) -- should dump the html from the url
