@@ -14,6 +14,8 @@ dropInvalids = filter (\x -> isLetter x || isDigit x || isSymbol x)
 
 prependHaskell inputString = "Haskell+" ++ inputString
 appendStackoverflow inputString = inputString ++ "+Stackoverflow"
+appendDuckduckgoJunk inputString = inputString ++ "&t=ht&ia=web"
+prependDuckduckgoJunk inputString = "duckduckgo.com/search?q=" ++ inputString
 
 main = do
     args <- getArgs
