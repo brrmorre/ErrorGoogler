@@ -33,7 +33,8 @@ main = do
         (_, Just googlehout, _, _) <- googleSearcher(errorMessage)
         searchResultGoogleHTML <- hGetContents googlehout
         putStrLn searchResultGoogleHTML
-        putStrLn (duckduckgoConverter(errorMessage))
+        putStrLn (stackoverflowURLFinder(searchResultGoogleHTML))
+        putStrLn (googleConverter(errorMessage))
         putStrLn errorMessage
 
 wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]){ std_out = CreatePipe } -- should dump the html from the url
