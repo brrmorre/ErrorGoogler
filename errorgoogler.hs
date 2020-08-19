@@ -36,7 +36,7 @@ wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win6
 --wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-o", "search.html"]) -- should dump the html from the url
 whiteSpaceToPlusConverter string = map (\character -> if character==' ' then '+'; else character) string
 uRLConverter searchString = appendStackoverflow(prependHaskell(drop 24 (dropInvalids(whiteSpaceToPlusConverter(searchString)))))
-duckduckgoConverter searchString = "duckduckgo.com/search?q=" ++ uRLConverter searchString -- convert a search string into a duckduckgo search url
+duckduckgoConverter searchString = appendDuckduckgoJunk(prependDuckduckgoJunk(uRLConverter(searchString))) -- convert a search string into a duckduckgo search url
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 stackoverflowURLFinder html = (html =~ ("(https://|http://)?([^./]+[.])?stackoverflow[.]com.*" :: String)) :: [[String]]
 grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
