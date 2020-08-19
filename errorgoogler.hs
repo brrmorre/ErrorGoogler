@@ -16,6 +16,7 @@ prependHaskell inputString = "Haskell+" ++ inputString
 appendStackoverflow inputString = inputString ++ "+Stackoverflow"
 appendDuckduckgoJunk inputString = inputString ++ "&t=ht&ia=web"
 prependDuckduckgoJunk inputString = "duckduckgo.com/?q=" ++ inputString
+prependGoogleJunk inputString = "google.com/search?q=" ++ inputString
 
 main = do
     args <- getArgs
