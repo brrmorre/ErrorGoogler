@@ -42,6 +42,8 @@ whiteSpaceToPlusConverter string = map (\character -> if character==' ' then '+'
 uRLConverter searchString = appendStackoverflow(prependHaskell(drop 24 (dropInvalids(whiteSpaceToPlusConverter(searchString)))))
 duckduckgoConverter searchString = prependDuckduckgoJunk(uRLConverter(searchString)) -- convert a search string into a duckduckgo search url
 duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
+googleConverter searchString = prependGoogleJunk(uRLConverter(searchString)) -- convert a search string into a duckduckgo search url
+googleSearcher searchString = wget(googleConverter searchString)
 stackoverflowURLFinder html = (html =~ ("(https://|http://)?([^./]+[.])?stackoverflow[.]com.*" :: String)) :: [[String]]
 grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
 runGHC filePath = createProcess (proc "ghc" [filePath]){std_out = CreatePipe, std_err = CreatePipe}
