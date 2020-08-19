@@ -29,10 +29,8 @@ main = do
         errorMessage <- hGetContents ghcherror
         (_, Just ddghout, _, _) <- duckduckgoSearcher(errorMessage)
         searchResultDDGHTML <- hGetContents ddghout
-        putStrLn searchResultDDGHTML
         (_, Just googlehout, _, _) <- googleSearcher(errorMessage)
         searchResultGoogleHTML <- hGetContents googlehout
-        putStrLn searchResultGoogleHTML
         putStrLn (head(head(stackoverflowURLFinder(searchResultGoogleHTML))))
         putStrLn (googleConverter(errorMessage))
         putStrLn errorMessage
