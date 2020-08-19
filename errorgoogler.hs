@@ -10,7 +10,7 @@ import System.IO
 import Data.Char
 
 dropInvalids :: [Char] -> [Char]
-dropInvalids = filter (\x -> isLetter x || isSpace x || isDigit x)
+dropInvalids = filter (\x -> isLetter x|| isDigit x)
 
 main = do
     args <- getArgs
@@ -24,7 +24,7 @@ main = do
         --(_, Just ddghout, _, _) <- duckduckgoSearcher(errorMessage)
         --searchResultHTML <- hGetContents ddghout
         --putStrLn searchResultHTML
-        putStrLn (dropInvalids(duckduckgoConverter(errorMessage)))
+        putStrLn (duckduckgoConverter(dropInvalids(errorMessage)))
         --putStrLn errorMessage
 
 wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]){ std_out = CreatePipe } -- should dump the html from the url
