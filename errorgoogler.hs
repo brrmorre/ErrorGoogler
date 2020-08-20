@@ -36,6 +36,10 @@ main = do
         (_, Just stackoverflowhout, _, _) <- wget (head(tail(head(stackoverflowURLFinder(searchResultGoogleHTML)))))
         stackHTML <- hGetContents stackoverflowhout
         putStrLn stackHTML
+        --remove question from HTML because that has bad code
+        --remove metadata, look for class="answer accepted-answer"
+        --look for <code></code> blocks inside the accepted-answer
+        --copy paste them into the code file
 
 wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]){ std_out = CreatePipe } -- should dump the html from the url
 --wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-o", "search.html"]) -- should dump the html from the url
