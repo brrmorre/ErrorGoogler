@@ -37,6 +37,7 @@ main = do
         stackHTML <- hGetContents stackoverflowhout
         putStrLn stackHTML
         print (codeBlockFinder stackHTML)
+        print (acceptedAnswerFinder stackHTML)
         --remove question from HTML because that has bad code
         --remove metadata, look for class="answer accepted-answer"
         --look for <code></code> blocks inside the accepted-answer
@@ -52,6 +53,7 @@ googleConverter searchString = prependGoogleJunk(uRLConverter(searchString)) -- 
 googleSearcher searchString = wget(googleConverter searchString)
 stackoverflowURLFinder html = (html =~ ("((https://|http://)?([^./]+[.])?stackoverflow[.]com[^\"]*)(\")" :: String)) :: [[String]]
 codeBlockFinder html = (html =~ ("<code>(.|\n)*</code>" :: String)) :: [[String]]
+acceptedAnswerFinder html = (html =~ ("class=\"answer accepted-answer\"(.|\n)*</div>" :: String)) :: [[String]]
 grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
 runGHC filePath = createProcess (proc "ghc" [filePath]){std_out = CreatePipe, std_err = CreatePipe}
 --searchDuckduckgoForStackoverflowURLs searchString = stackoverflowURLFinder(duckduckgoSearcher(searchString))
