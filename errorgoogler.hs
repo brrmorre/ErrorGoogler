@@ -35,8 +35,8 @@ main = do
         searchResultGoogleHTML <- hGetContents googlehout
         (_, Just stackoverflowhout, _, _) <- wget (head(tail(head(stackoverflowURLFinder(searchResultGoogleHTML)))))
         stackHTML <- hGetContents stackoverflowhout
-        putStrLn stackHTML
-        print (codeBlockFinder stackHTML)
+        --putStrLn stackHTML
+        --print (codeBlockFinder stackHTML)
         print (acceptedAnswerFinder stackHTML)
         --remove question from HTML because that has bad code
         --remove metadata, look for class="answer accepted-answer"
