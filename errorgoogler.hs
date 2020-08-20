@@ -51,7 +51,7 @@ duckduckgoSearcher searchString = wget(duckduckgoConverter searchString)
 googleConverter searchString = prependGoogleJunk(uRLConverter(searchString)) -- convert a search string into a duckduckgo search url
 googleSearcher searchString = wget(googleConverter searchString)
 stackoverflowURLFinder html = (html =~ ("((https://|http://)?([^./]+[.])?stackoverflow[.]com[^\"]*)(\")" :: String)) :: [[String]]
-codeBlockFinder html = (html =~ ("<code>(.|\n)*<\/code>" :: String)) :: [[String]]
+codeBlockFinder html = (html =~ ("<code>(.|\n)*</code>" :: String)) :: [[String]]
 grep searchWord filename = createProcess(proc "grep" [searchWord,filename])
 runGHC filePath = createProcess (proc "ghc" [filePath]){std_out = CreatePipe, std_err = CreatePipe}
 --searchDuckduckgoForStackoverflowURLs searchString = stackoverflowURLFinder(duckduckgoSearcher(searchString))
