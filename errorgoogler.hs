@@ -52,12 +52,12 @@ searchForSingularCodeBlocks text = --just implement this somehow
 searchForSingularParagraphBlocks text = --just implement this somehow
 coarseFilter text = codeBlockFinder(head(head(answerFinder text)))
 fineFilter text = searchForSingularCodeBlocks text
-improvedCodeGuesser sloppyCode research seed = fineFilter(research) --make a guess for improved code based on old code and the research
+--improvedCodeGuesser sloppyCode research seed = newCodeToPaste(research) --make a guess for improved code based on old code and the research
 askUser codes = --ask the user which code is best
 findErrorMessageNumber errorMessage = --find the error message number for an error message
 guessResearchPage = getFirstStackOverflowURL(searchResultGoogleHTML) --guess the stackoverflowpage
 codeIsWellFormed = --true if code is well formed
-newCodeToPaste research = fineFilter research
+guessCodeToPaste research seed = fineFilter(research)
 guessNewCode sloppyCode newCodeToPaste errorMessageNumber seed = 
     --you can paste where the errorMessageNumber is pointing to
     --or look for place in the code with smallest edit distance
