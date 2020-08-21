@@ -54,6 +54,7 @@ askUser codes = --ask the user which code is best
 improveCode inputCode research seed = if (askUser(improvedCodeGuesser inputCode research seed)) then 
 return (improvedCodeGuesser inputCode research seed) 
 else return (improveCode inputCode research newUniqueSeed(seed)) --output improved code by asking the user different guesses until he is happy with code improvement
+newUniqueSeed seed = seed + 1
 
         
 --translate to comment
