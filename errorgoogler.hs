@@ -42,14 +42,15 @@ main = do
         --remove metadata, look for class="answer accepted-answer"
         --look for <code></code> blocks inside the accepted-answer
         --copy paste them into the code file
+        improveCode(sloppyCode)
         
 
 searchForSingularCodeBlocks text = --just implement this somehow
 searchForSingularParagraphBlocks text = --just implement this somehow
-coarseFilter text = codeBlockFinder text
+coarseFilter text = codeBlockFinder(head(head(answerFinder text)))
 fineFilter text = searchForSingularCodeBlocks text
 improvedCodeGuesser sloppyCode research = --make a guess for improved code based on old code and the research
-improvedCode = --output improved code by asking the user different guesses until he is happy with code improvement
+improveCode = --output improved code by asking the user different guesses until he is happy with code improvement
         
 --translate to comment
 
