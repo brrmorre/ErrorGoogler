@@ -37,7 +37,7 @@ main = do
         stackHTML <- hGetContents stackoverflowhout
         --putStrLn stackHTML
         --print (codeBlockFinder stackHTML)
-        print (codeBlockFinder(head(head(answerFinder stackHTML))))
+        print (coarseFilter stackHTML)
         --remove question from HTML because that has bad code
         --remove metadata, look for class="answer accepted-answer"
         --look for <code></code> blocks inside the accepted-answer
