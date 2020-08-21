@@ -42,6 +42,71 @@ main = do
         --remove metadata, look for class="answer accepted-answer"
         --look for <code></code> blocks inside the accepted-answer
         --copy paste them into the code file
+        
+--translate to comment
+
+--attempt to ask questions about well formed ness
+--ask how it is accomplished
+
+--the reason why I black box guess is here is how guess can be implemented
+--first use random pick, thats the easiest way
+--more sophisticated way is to look at outside parameters
+--in this case we can use stackoverflow upvotes
+--we can get top answer from stackoverflow
+
+--we are trying to find what spot in the code to apply the answer to the stack overflow thing
+--that sentence is the function
+--how do we implement that?
+--we take the stackoverflow code in the pastebin and then check to see if its a well formed term.
+--(thats a very useful statistic, to see if its a good piece of code we want to put into our code)
+--get the same crap for the source code
+--then compare it
+--see if its close to any part of the code
+--or we could just look at edit distance
+--we can just look to see if any substring of the code
+--is below a certain edit distance to a substring of the stack overflow code
+--Im just tossing out different ideas of how to implement something
+--you can test both and see which one is better
+--look to see if a reasonable large subtree of the stack overflow code tree 
+--is similar to a subtree of the sourceCode
+--if our code or the stackoverflow code doesnt form a tree then you can look at the edit distance thing
+--and if none of them work then you can look at the error number presented in the error message
+--and if you cant do literally anything then its up to the user
+
+--make a new filter, a fine grain filter
+--the fine grain filters look at <code></code> blocks
+--and <p></p> blocks
+--rename the old filter to coarse filter
+--then we need to make a guess as to which blocks the user may want
+--we need to then present our guess to the user
+--ask the user if our guess may help fix the error or not
+--you can present a bunch of potential guesses to the user at once and the user can choose
+--if not then try again
+--if our guess does help fix the error(user likes it) then this guess is put into the clipboard
+--then we need to make a guess as to where to put the blocks (the shit we put into the clipboard)
+--our guess can be based on the error and the number that the error presents AND/OR 
+--it can be based on the form of the code in our clipboard and see if it is close in form
+--to a certain place in our sloppyCode
+--we need to then present our guess to the user
+--kind of where in the code should we put our clipboard
+--and we can present a bunch of guesses at once and the user could choose.
+--if its wrong then try again
+-- <p></p> blocks are made into comments
+-- <code></code> blocks are made into comments
+--paste into sloppyCode as comments where the user wanted
+
+--then after its pasted into the sloppycode as comments then 
+--ask the user if he wants to make a git commit
+--ask if he wants to push
+--to make less annoying you can also have some preset options for questions
+--then after that
+--you can either make your sloppyCode error piece similar in shape to the exampleCode
+--that was pasted from stack overflow
+--ask the user if sloppyCode looks better than before
+--if he says yes you can save and commit and push
+
+--I should make a function that takes pronouns and converts to actual names of things
+--by asking the user what each pronoun means like (it then does this)
 
 wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]){ std_out = CreatePipe } -- should dump the html from the url
 --wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-o", "search.html"]) -- should dump the html from the url
