@@ -84,8 +84,8 @@ generalCommentToCertainStrategy -- converts a general comment into a certain str
     --convert the strategies to code and then run them and see which one works most of the time or is fastest
     --or ask the user if you have trouble
     --to convert the strategies to code you just recurse down into them
-vagueIdeaIntoCode idea --converts a vague idea into code
-
+--how again do I assemble these ideas?
+vagueIdeaIntoCode idea = --converts a vague idea into code
         
 --translate to comment
 
