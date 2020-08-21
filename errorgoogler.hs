@@ -56,6 +56,7 @@ improvedCodeGuesser sloppyCode research seed = fineFilter(research) --make a gue
 askUser codes = --ask the user which code is best
 findErrorMessageNumber errorMessage = --find the error message number for an error message
 guessResearchPage = getFirstStackOverflowURL(searchResultGoogleHTML) --guess the stackoverflowpage
+newCodeToPaste research = fineFilter research
 guessNewCode sloppyCode newCodeToPaste errorMessageNumber seed = 
     --you can paste where the errorMessageNumber is pointing to
     --or look for place in the code with smallest edit distance
