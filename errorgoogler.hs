@@ -78,6 +78,8 @@ functionNameToGeneralCommentConverter -- converts a function name into a general
 generalCommentToCertainStrategy -- converts a general comment into a certain strategy to implement it
     --you can ask the user how they want to implement it
     --or you can ask google how to implement the certain strategy
+    --basically collect certain strategies
+    --and then test them to see which one is the best
 
         
 --translate to comment
