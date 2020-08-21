@@ -51,7 +51,7 @@ searchForSingularCodeBlocks text = --just implement this somehow
 searchForSingularParagraphBlocks text = --just implement this somehow
 coarseFilter text = codeBlockFinder(head(head(answerFinder text)))
 fineFilter text = searchForSingularCodeBlocks text
-improvedCodeGuesser sloppyCode research seed = --make a guess for improved code based on old code and the research
+improvedCodeGuesser sloppyCode research seed = fineFilter(research) --make a guess for improved code based on old code and the research
 askUser codes = --ask the user which code is best
 improveCode inputCode research seed = if (askUser(improvedCodeGuesser inputCode research seed)) then 
 return (improvedCodeGuesser inputCode research seed) 
