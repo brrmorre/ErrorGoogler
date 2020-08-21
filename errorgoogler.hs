@@ -52,7 +52,6 @@ searchForSingularCodeBlocks text = --just implement this somehow
 searchForSingularParagraphBlocks text = --just implement this somehow
 coarseFilter text = codeBlockFinder(head(head(answerFinder text)))
 fineFilter text = searchForSingularCodeBlocks text
---improvedCodeGuesser sloppyCode research seed = newCodeToPaste(research) --make a guess for improved code based on old code and the research
 askUser codes = --ask the user which code is best
 findErrorMessageNumber errorMessage = --find the error message number for an error message
 guessResearchPage = getFirstStackOverflowURL(searchResultGoogleHTML) --guess the stackoverflowpage
@@ -63,7 +62,7 @@ guessSpotToPasteCode sloppyCode newCodeToPaste errorMessageNumber seed =
     --or look for place in the code with smallest edit distance
     --or compare abstract syntax trees of the sloppyCode and newCodeToPaste and see if both trees share a common subtree
 modifyCode oldCode codeToPaste spotToPaste = --paste codeToPaste inside oldCode at spotToPaste
-guessNewCode sloppyCode research errorMessageNumber seed = modifyCode(guessCodeToPaste(sloppyCode,seed),guessSpotToPasteCode(sloppyCode,guessCodeToPaste(sloppyCode,seed),seed))
+guessNewCode sloppyCode research errorMessageNumber seed = modifyCode(sloppyCode,guessCodeToPaste(research,seed),guessSpotToPasteCode(sloppyCode,guessCodeToPaste(research,seed)))
 improveCode inputCode research seed = if (askUser(guessNewCode inputCode research seed)) then 
     return (improvedCodeGuesser inputCode research seed) 
     else return (improveCode inputCode research newUniqueSeed(seed)) --output improved code by asking the user different guesses until he is happy with code improvement
