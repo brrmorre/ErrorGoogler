@@ -54,7 +54,7 @@ fineFilter text = searchForSingularCodeBlocks text
 improvedCodeGuesser sloppyCode research seed = fineFilter(research) --make a guess for improved code based on old code and the research
 askUser codes = --ask the user which code is best
 findErrorMessageNumber errorMessage = --find the error message number for an error message
-guessNewCode sloppyCode newCodeToPaste errorMessage = findErrorMessageNumber(errorMessage)
+guessNewCode sloppyCode newCodeToPaste errorMessageNumber seed = --
 improveCode inputCode research seed = if (askUser(improvedCodeGuesser inputCode research seed)) then 
 return (improvedCodeGuesser inputCode research seed) 
 else return (improveCode inputCode research newUniqueSeed(seed)) --output improved code by asking the user different guesses until he is happy with code improvement
