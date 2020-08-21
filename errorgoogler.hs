@@ -33,7 +33,7 @@ main = do
         --searchResultDDGHTML <- hGetContents ddghout
         (_, Just googlehout, _, _) <- googleSearcher(errorMessage)
         searchResultGoogleHTML <- hGetContents googlehout
-        (_, Just stackoverflowhout, _, _) <- wget (guessResearchPage(searchResultGoogleHTML))
+        (_, Just stackoverflowhout, _, _) <- goToResearchPageGuess(searchResultGoogleHTML)
         stackHTML <- hGetContents stackoverflowhout
         --putStrLn stackHTML
         --print (codeBlockFinder stackHTML)
@@ -47,6 +47,7 @@ main = do
         
 getFirstStackOverflowURL searchResultGoogleHTML = head(tail(head(stackoverflowURLFinder(searchResultGoogleHTML))))
 
+goToResearchPageGuess = wget(guessResearchPage(searchResultGoogleHTML))
 searchForSingularCodeBlocks text = --just implement this somehow
 searchForSingularParagraphBlocks text = --just implement this somehow
 coarseFilter text = codeBlockFinder(head(head(answerFinder text)))
