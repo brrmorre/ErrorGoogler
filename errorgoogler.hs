@@ -33,7 +33,7 @@ main = do
         --searchResultDDGHTML <- hGetContents ddghout
         (_, Just googlehout, _, _) <- googleSearcher(errorMessage)
         searchResultGoogleHTML <- hGetContents googlehout
-        (_, Just stackoverflowhout, _, _) <- wget (head(tail(head(stackoverflowURLFinder(searchResultGoogleHTML)))))
+        (_, Just stackoverflowhout, _, _) <- wget (getStackOverflowURL(searchResultGoogleHTML))
         stackHTML <- hGetContents stackoverflowhout
         --putStrLn stackHTML
         --print (codeBlockFinder stackHTML)
@@ -44,6 +44,8 @@ main = do
         --copy paste them into the code file
         improveCode(sloppyCode)
         --then ask to git commit and git push
+        
+getStackOverflowURL searchResultGoogleHTML = head(tail(head(stackoverflowURLFinder(searchResultGoogleHTML))))
 
 searchForSingularCodeBlocks text = --just implement this somehow
 searchForSingularParagraphBlocks text = --just implement this somehow
