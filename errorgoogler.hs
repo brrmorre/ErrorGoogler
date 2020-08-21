@@ -74,6 +74,10 @@ newUniqueSeed seed = seed + 1
 vagueIdeaIntoFunctionNameConverter -- converts a general vague idea into a function name
 functionNameToGeneralCommentConverter -- converts a function name into a general comment about it
 --what do I need to implement that?
+--I need a certain strategy to implement it
+generalCommentToCertainStrategy -- converts a general comment into a certain strategy to implement it
+    --you can ask the user how they want to implement it
+    --or you can ask google how to implement the certain strategy
 
         
 --translate to comment
