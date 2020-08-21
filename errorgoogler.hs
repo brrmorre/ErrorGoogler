@@ -33,7 +33,7 @@ main = do
         --searchResultDDGHTML <- hGetContents ddghout
         (_, Just googlehout, _, _) <- googleSearcher(errorMessage)
         searchResultGoogleHTML <- hGetContents googlehout
-        (_, Just stackoverflowhout, _, _) <- wget (getFirstStackOverflowURL(searchResultGoogleHTML))
+        (_, Just stackoverflowhout, _, _) <- wget (guessResearchPage(searchResultGoogleHTML))
         stackHTML <- hGetContents stackoverflowhout
         --putStrLn stackHTML
         --print (codeBlockFinder stackHTML)
@@ -54,7 +54,7 @@ fineFilter text = searchForSingularCodeBlocks text
 improvedCodeGuesser sloppyCode research seed = fineFilter(research) --make a guess for improved code based on old code and the research
 askUser codes = --ask the user which code is best
 findErrorMessageNumber errorMessage = --find the error message number for an error message
-guessResearchPage = --guess the stackoverflowpage
+guessResearchPage = getFirstStackOverflowURL(searchResultGoogleHTML) --guess the stackoverflowpage
 guessNewCode sloppyCode newCodeToPaste errorMessageNumber seed = 
     --you can paste where the errorMessageNumber is pointing to
     --or look for place in the code with smallest edit distance
