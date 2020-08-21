@@ -69,6 +69,12 @@ improveCode inputCode research seed = if (askUser(guessNewCodeOuter inputCode re
     else return (guessNewCodeOuter inputCode research newUniqueSeed(seed)) --output improved code by asking the user different guesses until he is happy with code improvement
 newUniqueSeed seed = seed + 1
 
+--what do I want to do?
+--I want a function that converts a vague idea into code
+vagueIdeaIntoFunctionNameConverter -- converts a general vague idea into a function name
+functionNameToGeneralCommentConverter -- converts a function name into a general comment about it
+--what do I need to implement that?
+
         
 --translate to comment
 
