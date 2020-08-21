@@ -44,9 +44,11 @@ main = do
         --copy paste them into the code file
         
 
-searchForSingularCodeBlocks text =
+searchForSingularCodeBlocks text = --just implement this somehow
+searchForSingularParagraphBlocks text = --just implement this somehow
 coarseFilter text = codeBlockFinder text
 fineFilter text = searchForSingularCodeBlocks text
+helpfulCommentsGuesser = --make a guess for a helpfulComment composed of code block and paragraph
         
 --translate to comment
 
