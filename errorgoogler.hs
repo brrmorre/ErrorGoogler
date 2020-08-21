@@ -43,6 +43,11 @@ main = do
         --look for <code></code> blocks inside the accepted-answer
         --copy paste them into the code file
         
+
+searchForSingularCodeBlocks text =
+coarseFilter text = codeBlockFinder text
+fineFilter text = searchForSingularCodeBlocks text
+        
 --translate to comment
 
 --attempt to ask questions about well formed ness
