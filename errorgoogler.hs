@@ -48,7 +48,8 @@ searchForSingularCodeBlocks text = --just implement this somehow
 searchForSingularParagraphBlocks text = --just implement this somehow
 coarseFilter text = codeBlockFinder text
 fineFilter text = searchForSingularCodeBlocks text
-helpfulCommentsGuesser = --make a guess for a helpfulComment composed of code block and paragraph
+improvedCodeGuesser sloppyCode research = --make a guess for improved code based on old code and the research
+correctCommentLooper =
         
 --translate to comment
 
