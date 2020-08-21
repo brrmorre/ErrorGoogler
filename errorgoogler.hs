@@ -49,7 +49,7 @@ searchForSingularParagraphBlocks text = --just implement this somehow
 coarseFilter text = codeBlockFinder text
 fineFilter text = searchForSingularCodeBlocks text
 improvedCodeGuesser sloppyCode research = --make a guess for improved code based on old code and the research
-correctCommentLooper =
+improvedCode = --output improved code by asking the user different guesses until he is happy with code improvement
         
 --translate to comment
 
