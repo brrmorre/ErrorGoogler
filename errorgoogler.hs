@@ -43,7 +43,7 @@ main = do
         --look for <code></code> blocks inside the accepted-answer
         --copy paste them into the code file
         improveCode(sloppyCode)
-        
+        --then ask to git commit and git push
 
 searchForSingularCodeBlocks text = --just implement this somehow
 searchForSingularParagraphBlocks text = --just implement this somehow
@@ -52,6 +52,7 @@ fineFilter text = searchForSingularCodeBlocks text
 improvedCodeGuesser sloppyCode research = --make a guess for improved code based on old code and the research
 askUser codes = --ask the user which code is best
 improveCode = --output improved code by asking the user different guesses until he is happy with code improvement
+
         
 --translate to comment
 
