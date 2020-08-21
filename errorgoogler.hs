@@ -64,8 +64,8 @@ guessSpotToPasteCode sloppyCode newCodeToPaste errorMessageNumber seed =
 modifyCode oldCode codeToPaste spotToPaste = --paste codeToPaste inside oldCode at spotToPaste
 guessNewCode sloppyCode research errorMessageNumber seed = modifyCode(sloppyCode,guessCodeToPaste(research,seed),guessSpotToPasteCode(sloppyCode,guessCodeToPaste(research,seed)))
 improveCode inputCode research seed = if (askUser(guessNewCode inputCode research seed)) then 
-    return (improvedCodeGuesser inputCode research seed) 
-    else return (improveCode inputCode research newUniqueSeed(seed)) --output improved code by asking the user different guesses until he is happy with code improvement
+    return (guessNewCode inputCode research seed) 
+    else return (guessNewCode inputCode research newUniqueSeed(seed)) --output improved code by asking the user different guesses until he is happy with code improvement
 newUniqueSeed seed = seed + 1
 
         
