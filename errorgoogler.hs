@@ -62,8 +62,9 @@ guessSpotToPasteCode sloppyCode newCodeToPaste errorMessageNumber seed =
     --you can paste where the errorMessageNumber is pointing to
     --or look for place in the code with smallest edit distance
     --or compare abstract syntax trees of the sloppyCode and newCodeToPaste and see if both trees share a common subtree
+modifyCode oldCode codeToPaste spotToPaste = --paste codeToPaste inside oldCode at spotToPaste
 guessNewCode sloppyCode newCodeToPaste errorMessageNumber seed = guessCodeToPaste guessSpotToPasteCode
-improveCode inputCode research seed = if (askUser(improvedCodeGuesser inputCode newCodeToPaste(research,seed) seed)) then 
+improveCode inputCode research seed = if (askUser(guessNewCode inputCode newCodeToPaste(research,seed) seed)) then 
     return (improvedCodeGuesser inputCode research seed) 
     else return (improveCode inputCode research newUniqueSeed(seed)) --output improved code by asking the user different guesses until he is happy with code improvement
 newUniqueSeed seed = seed + 1
