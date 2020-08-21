@@ -33,7 +33,7 @@ main = do
         --searchResultDDGHTML <- hGetContents ddghout
         (_, Just googlehout, _, _) <- googleSearcher(errorMessage)
         searchResultGoogleHTML <- hGetContents googlehout
-        (_, Just stackoverflowhout, _, _) <- wget (getStackOverflowURL(searchResultGoogleHTML))
+        (_, Just stackoverflowhout, _, _) <- wget (getFirstStackOverflowURL(searchResultGoogleHTML))
         stackHTML <- hGetContents stackoverflowhout
         --putStrLn stackHTML
         --print (codeBlockFinder stackHTML)
@@ -45,7 +45,7 @@ main = do
         improveCode(sloppyCode)
         --then ask to git commit and git push
         
-getStackOverflowURL searchResultGoogleHTML = head(tail(head(stackoverflowURLFinder(searchResultGoogleHTML))))
+getFirstStackOverflowURL searchResultGoogleHTML = head(tail(head(stackoverflowURLFinder(searchResultGoogleHTML))))
 
 searchForSingularCodeBlocks text = --just implement this somehow
 searchForSingularParagraphBlocks text = --just implement this somehow
@@ -54,6 +54,7 @@ fineFilter text = searchForSingularCodeBlocks text
 improvedCodeGuesser sloppyCode research seed = fineFilter(research) --make a guess for improved code based on old code and the research
 askUser codes = --ask the user which code is best
 findErrorMessageNumber errorMessage = --find the error message number for an error message
+guessResearchPage = --guess the stackoverflowpage
 guessNewCode sloppyCode newCodeToPaste errorMessageNumber seed = 
     --you can paste where the errorMessageNumber is pointing to
     --or look for place in the code with smallest edit distance
