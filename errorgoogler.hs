@@ -80,6 +80,9 @@ generalCommentToCertainStrategy -- converts a general comment into a certain str
     --or you can ask google how to implement the certain strategy
     --basically collect certain strategies
     --and then test them to see which one is the best
+    --how would I do that?
+    --convert the strategies to code and then run them and see which one works most of the time or is fastest
+    --or ask the user if you have trouble
 
         
 --translate to comment
