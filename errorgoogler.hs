@@ -122,8 +122,9 @@ newUniqueSeed seed = seed + 1
 --I should make a function that takes pronouns and converts to actual names of things
 --by asking the user what each pronoun means like (it then does this)
 
-wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-O", "-"]){ std_out = CreatePipe } -- should dump the html from the url
---wget url = createProcess (proc "wget" ["-U", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36", "-q", url, "-o", "search.html"]) -- should dump the html from the url
+userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
+wget url = createProcess (proc "wget" ["-U", userAgent, "-q", url, "-O", "-"]){ std_out = CreatePipe } -- should dump the html from the url
+--wget url = createProcess (proc "wget" ["-U", userAgent, "-q", url, "-o", "search.html"]) -- should dump the html from the url
 whiteSpaceToPlusConverter string = map (\character -> if character==' ' then '+'; else character) string
 uRLConverter searchString = appendStackoverflow(prependHaskell(drop 24 (dropInvalids(whiteSpaceToPlusConverter(searchString)))))
 duckduckgoConverter searchString = prependDuckduckgoJunk(uRLConverter(searchString)) -- convert a search string into a duckduckgo search url
